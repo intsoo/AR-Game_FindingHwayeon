@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ThrowController : MonoBehaviour
 {
     private const float CameraDistance = 7.5f;
@@ -17,20 +18,29 @@ public class ThrowController : MonoBehaviour
     protected Vector3 InputPosition;
 
     // #ES1: Make sure to hold one object at a time (Prevent newly held object to hit the previous held one)
-    public static bool isAlreadyTouched2 = false;
+    public bool isAlreadyTouched2 = false;
+
+    // Player Guide
+    MinigameManager minigameScript; 
+
 
     void Start()
     {
         mainCamera = Camera.main; // Get the main camera of the scene
-        Reset();
+        minigameScript = GameObject.Find("ESGameManager").GetComponent<MinigameManager>();
+
+        // Reset();
+        
     }
 
     void Update()
     {
+        // Player Guide
+
         // Use mouse click if executed in Unity Editor(for testing)
-        #if !UNITY_EDITOR
-        if (Input.touchCount == 0) return;
-        #endif
+        // #if !UNITY_EDITOR
+        // if (Input.touchCount == 0) return;
+        // #endif
 
         InputPosition = TouchHelper.TouchPosition;  // If touched, get the touched position
 
@@ -39,6 +49,9 @@ public class ThrowController : MonoBehaviour
         {
             if(!isAlreadyTouched2) {  // #ES1
                 Reset();
+
+                // Player Guide
+                minigameScript.showGuidelines(3);  // 3: Drag the object to throw
             }
             return;
         }
@@ -63,6 +76,10 @@ public class ThrowController : MonoBehaviour
 
                 // the object is no longer being held
                 HoldingObject = null;  
+
+                // Player Guide
+                minigameScript.showGuidelines(2);  // 2: Touch the screen with two fingers to create new object to throw
+
                 return;
             }
             Move(InputPosition);  // Move the object to the touched position

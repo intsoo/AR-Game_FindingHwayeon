@@ -40,7 +40,7 @@ public class ScoreManager : MonoBehaviour
     {
         if(currentScore >= targetScore)
         {
-            GameObject.Find("ESMinigameManager").GetComponent<ESMinigameManager>().showGameoverPanel();
+            GameObject.Find("ESGameManager").GetComponent<MinigameManager>().showGameoverPanel();
         }
     }
 }

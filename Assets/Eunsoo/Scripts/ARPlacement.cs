@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.UI;
 
 public class ARPlacement : MonoBehaviour
 {
@@ -14,35 +15,51 @@ public class ARPlacement : MonoBehaviour
     private ARRaycastManager aRRaycastManager;
     private bool placementPoseIsValid = false;
 
-    // #ES: No more plane showing after he bowl is placed
+    // #ES: No more plane showing after the bowl is placed
     private ARPlaneManager arPlaneManager;
 
-    void Start()
+    // Player Guide
+    MinigameManager minigameScript;   
+    private bool isObjectPlaced = false; 
+
+    void Awake()
     {
         aRRaycastManager = FindObjectOfType<ARRaycastManager>();
         arPlaneManager = FindObjectOfType<ARPlaneManager>();
 
+        minigameScript = GameObject.Find("ESGameManager").GetComponent<MinigameManager>();
     }
 
     // need to update placement indicator, placement pose and spawn 
     void Update()
     {
+
+        if(isObjectPlaced) return;
+
+        UpdatePlacementPose();
+        UpdatePlacementIndicator();
+        
         // Create the bowl instance and place it on the plane only once
         if(spawnedObject == null && placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             ARPlaceObject();
+            
+            // Player Guide
+            minigameScript.showGuidelines(2);  // 2: Touch the screen with two fingers to create new object to throw
+            isObjectPlaced = true;
         }
 
-        UpdatePlacementPose();
-        UpdatePlacementIndicator();
-
     }
+
     void UpdatePlacementIndicator()
     {
         if(spawnedObject == null && placementPoseIsValid)
         {
             placementIndicator.SetActive(true);
             placementIndicator.transform.SetPositionAndRotation(PlacementPose.position, PlacementPose.rotation);
+
+            // Player Guide
+            minigameScript.showGuidelines(1);  // 1: Touch the screen to place the container object
         }
         else
         {
@@ -58,6 +75,9 @@ public class ARPlacement : MonoBehaviour
 
     void UpdatePlacementPose()
     {
+        // Player Guide
+        minigameScript.showGuidelines(0);  // 0: detecting planes
+
         // Get the position of the screen center
         var screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         var hits = new List<ARRaycastHit>();

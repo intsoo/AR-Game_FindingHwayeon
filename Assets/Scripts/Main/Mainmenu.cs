@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Mainmenu : MonoBehaviour
 {
@@ -13,10 +13,15 @@ public class Mainmenu : MonoBehaviour
     public void onClickNewGame()
     {
         Debug.Log("new game");
+        SceneManager.LoadScene("Intro");
+
     }
     public void onClickLoad()
     {
         Debug.Log("load");
+
+        SceneManager.LoadScene("Intro");
+        // 저장된 데이터가 있다면 불러오기
     }
     public void onClickSetting()
     {

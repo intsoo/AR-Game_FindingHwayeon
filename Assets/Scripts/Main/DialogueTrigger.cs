@@ -8,6 +8,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public Dialogue dialogue1;
     public Dialogue dialogue2;
+    public Dialogue dialogue3;
 
 
     public void Dialogue1Trigger()
@@ -22,5 +23,10 @@ public class DialogueTrigger : MonoBehaviour
         system.Begin(dialogue2);
 
     }
+    public void Dialogue3Trigger()
+    {
+        var system = FindObjectOfType<DialogueSystem>();
+        system.Begin(dialogue3);
 
+    }
 }

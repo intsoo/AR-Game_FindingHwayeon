@@ -15,7 +15,7 @@ public class DialogueSystem : MonoBehaviour
     public GameObject thinkingBubble; // 생각 말풍선 
     public GameObject speechBubble; //  봉원이용 말풍선 
     private Dialogue DialogueInfo; 
-
+    private GameObject BeforeMonologueImage;
     Queue<Monologue> dialogues = new Queue<Monologue>();
     // 딕셔너리 생성
     Dictionary<int, GameObject> bubbleMap = new Dictionary<int, GameObject>();
@@ -70,13 +70,24 @@ public class DialogueSystem : MonoBehaviour
         else
         {
 
+            // 이전 대화에서 활성화된 이미지가 있다면 제거 
+
             DeactivateAllTxtGui();
+
+            if (BeforeMonologueImage != null && BeforeMonologueImage.tag != "Maintain")
+            {
+                
+                    BeforeMonologueImage.SetActive(false);
+                    BeforeMonologueImage = null;
+              
+               
+            }
 
             Monologue monologue = dialogues.Dequeue();
 
             TextMeshProUGUI txtSentence;
 
-            
+        
           
             switch (monologue.bubbleType)
             {
@@ -85,46 +96,61 @@ public class DialogueSystem : MonoBehaviour
                 case 0:
                     translucentBubble.SetActive(true);
                    txtSentence = translucentBubble.GetComponentInChildren<TextMeshProUGUI>();
-                
+                    txtSentence.text = monologue.sentence;
                     break;
 
 
                 case 1:
                     greenBubble.SetActive(true);
                     txtSentence = greenBubble.GetComponentInChildren<TextMeshProUGUI>();
-                
+                    txtSentence.text = monologue.sentence;
                     break;
 
                 case 2:
                     thinkingBubble.SetActive(true);
                     txtSentence = thinkingBubble.GetComponentInChildren<TextMeshProUGUI>();
-                  
+                    txtSentence.text = monologue.sentence;
                     break;
 
                 case 3:
                     speechBubble.SetActive(true);
                     txtSentence = speechBubble.GetComponentInChildren<TextMeshProUGUI>();
-                   
+                    txtSentence.text = monologue.sentence;
                     break;
     
              
             }
-            txtSentence = translucentBubble.GetComponentInChildren<TextMeshProUGUI>(); // 기본 설정값
-            txtSentence.text = monologue.sentence;
+           
+           
             // 사진 있으면 사진도 같이 활성화
-
             if (monologue.clip!=null)
             {
                 monologue.clip.SetActive(true);
+                BeforeMonologueImage = monologue.clip;
             }
 
-
+            // 말풍선 위치 조정값 있으면 말풍선 위치 조정
+            if(monologue.transform!=null)
+            {
+                Vector2 movement = monologue.transform;
+                bubbleMap[monologue.bubbleType].transform.Translate(new Vector3(movement.x, movement.y, 0f));
+                    
+            }
+           
         }
     }
 
     public void End()
     {
 
+        if (BeforeMonologueImage != null )
+        {
+
+            BeforeMonologueImage.SetActive(false);
+   
+
+        }
+      
         DeactivateAllTxtGui();
         IntroGameManager introGameManager = FindObjectOfType<IntroGameManager>();
   
@@ -135,8 +161,12 @@ public class DialogueSystem : MonoBehaviour
         }
         else if (IntroGameManager.doesDialogue2End == false)
         {
-            IntroGameManager.doesDialogue1End = false;
+            IntroGameManager.doesDialogue2End = true;
             introGameManager.Dialogue2End();
+        }
+        else
+        {
+            // 스테이지로 전환
         }
         
 

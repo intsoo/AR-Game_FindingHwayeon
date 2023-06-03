@@ -14,6 +14,7 @@ public class IntroGameManager : MonoBehaviour
     public static bool doesDialogue2End=false;
 
     public DialogueTrigger dialogueTrigger;
+
     /**
      * Dialogue1 : 주인공 독백
      * Dialogue2 : 아산공학관 도착 ~ 미니게임전
@@ -50,9 +51,9 @@ public class IntroGameManager : MonoBehaviour
 
         // 사진 인식되면 
 
-        var doesAsanPictureRecognized = true;
+        var AsanPictureRecognized = true;
 
-        if (doesAsanPictureRecognized)
+        if (AsanPictureRecognized)
         {
             Dialogue2Start();
         }
@@ -76,9 +77,12 @@ public class IntroGameManager : MonoBehaviour
     {
 
         Debug.Log("Dialogue2End");
+        FeedTheCatGameStart();
 
 
     }
+
+
 
     public void FeedTheCatGameStart()
     {
@@ -86,6 +90,23 @@ public class IntroGameManager : MonoBehaviour
         Debug.Log("FeedTheCatGameStart");
 
         // 통과하면 
+        var FeedTheCatGamePassed = true;
+
+        if (FeedTheCatGamePassed)
+        {
+            Dialogue3Start();
+        }
+
+    }
+
+    public void Dialogue3Start() // 아산 공학관 쪽문 도착 (장면 전환)
+    {
+
+   
+        dialogueTrigger.Dialogue3Trigger();// 대화2 시작
+
+
+
 
 
     }

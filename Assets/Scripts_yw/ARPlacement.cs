@@ -8,6 +8,7 @@ public class ARPlacement : MonoBehaviour
 {
     public GameObject arObjectToSpawn;
     public GameObject placementIndicator;
+    public GameObject shoot;
 
     private GameObject spawnedObject;
     private Pose PlacementPose;
@@ -18,6 +19,7 @@ public class ARPlacement : MonoBehaviour
     void Start()
     {
         aRRaycastManager = FindObjectOfType<ARRaycastManager>();
+        shoot.SetActive(false); //Shooting should not be activated until the spider is spawned
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class ARPlacement : MonoBehaviour
         if (spawnedObject == null && placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             ARPlaceObject();
+            shoot.SetActive(true);
         }
 
         UpdatePlacementPose();

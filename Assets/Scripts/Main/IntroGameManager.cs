@@ -25,11 +25,7 @@ public class IntroGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
- 
         dialogueTrigger.Dialogue1Trigger();// 대화1 시작
-
-
     }
 
    
@@ -66,7 +62,7 @@ public class IntroGameManager : MonoBehaviour
         bg1.SetActive(false);
         bg2.SetActive(true);
         dialogueTrigger.Dialogue2Trigger();// 대화2 시작
-
+        Debug.Log("Dialogue2Start");
        
 
 

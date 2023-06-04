@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+
   - Maintain
+
+  - Container
+  - ThrownObject
+
   layers:
   - Default
   - TransparentFX

@@ -5,12 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/ShootingGame_yw.unity
     guid: 68a0c96acc6636148857466b5509c655
+  - enabled: 1
+    path: Assets/Eunsoo/Scenes/Minigame_trash.unity
+    guid: 45cf133f7e8e34f8da82c638546501e0
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: dadb6b8cb9ed4574e86cc5d67c6c49ba
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 32adee3f492ce77499fd04105ea5fb64, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 3e2e897c9d6656e498395754a6fef50d, type: 2}

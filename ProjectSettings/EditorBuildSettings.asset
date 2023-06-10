@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Eunsoo/Scenes/Minigame1.unity
+    path: Assets/Eunsoo/Scenes/Minigame_trash.unity
     guid: 45cf133f7e8e34f8da82c638546501e0
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity

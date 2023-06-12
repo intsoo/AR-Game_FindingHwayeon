@@ -40,11 +40,10 @@ public class EndingGameManager : MonoBehaviour
         
         GameDataManager gameDataManager= FindObjectOfType<GameDataManager>();
         Debug.Log("종료!");
-        gameDataManager.ClearStage(3);
+
         gameDataManager.Save(); // 저장
         int[] data = gameDataManager.getClearedStage();
 
-        Debug.Log(data[3]);
        
     }
   

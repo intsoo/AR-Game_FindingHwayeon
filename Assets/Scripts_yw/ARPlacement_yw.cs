@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public class ARPlacement : MonoBehaviour
+public class ARPlacement_yw : MonoBehaviour
 {
     public GameObject arObjectToSpawn;
     public GameObject placementIndicator;
@@ -36,14 +36,14 @@ public class ARPlacement : MonoBehaviour
         UpdatePlacementIndicator();
     }
 
-    void UpdatePlacementIndicator() 
+    void UpdatePlacementIndicator()
     {
         if (spawnedObject == null && placementPoseIsValid)
         {
             placementIndicator.SetActive(true);
             placementIndicator.transform.SetPositionAndRotation(PlacementPose.position, PlacementPose.rotation);
         }
-        else 
+        else
         {
             placementIndicator.SetActive(false);
 
@@ -52,7 +52,7 @@ public class ARPlacement : MonoBehaviour
 
     void UpdatePlacementPose()
     {
-        var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f)); //screen center¿¡¼­ ar carmera
+        var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f)); //screen centerï¿½ï¿½ï¿½ï¿½ ar carmera
         var hits = new List<ARRaycastHit>();
         aRRaycastManager.Raycast(screenCenter, hits, TrackableType.Planes);
 

@@ -7,13 +7,7 @@ TagManager:
   - Spider
   - ScoreCanvas
   - ScoreOnBanner
-
-
-  - Maintain
-
-  - Container
-  - ThrownObject
-
+  - GameSuccessText
   layers:
   - Default
   - TransparentFX
@@ -23,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - PlacedObject
+  - 
   - 
   - 
   - 

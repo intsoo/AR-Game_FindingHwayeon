@@ -41,8 +41,8 @@ public class EndingGameManager : MonoBehaviour
         GameDataManager gameDataManager= FindObjectOfType<GameDataManager>();
         Debug.Log("종료!");
 
-        gameDataManager.Save(); // 저장
-        int[] data = gameDataManager.getClearedStage();
+        gameDataManager.Save(); // save visited places
+ 
 
        
     }

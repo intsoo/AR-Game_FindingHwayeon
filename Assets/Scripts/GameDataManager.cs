@@ -8,76 +8,99 @@ public class GameDataManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public static int[] stageClearInfo = {0,0,0,0,0};
-    
+    public static int[] stageClearInfo = { 0, 0, 0, 0, 0 }; // save only in run time
 
- 
-    // 스테이지 불러오기
-    private void Awake() 
+    // #JES
+    public static int[] visitedPlaceInfo = { 0, 0, 0, 0, 0, 0, 0, 0 };
+
+
+    private void Awake()
     {
-        int [] serializedData=Load();
 
-        if (serializedData != null) // 저장한데이터가 있을 경우
+        // #JES
+        int[] placeSerializedData = Load();
+
+
+        // #JES
+        if (placeSerializedData != null)
         {
-
-            stageClearInfo = serializedData;
+            visitedPlaceInfo = placeSerializedData;
         }
-       
+
         Debug.Log(stageClearInfo[0]);
 
     }
     public int[] Load()
     {
 
-        string clearedStage = PlayerPrefs.GetString("stageClearData");
-        string[] stringArray = clearedStage.Split(',');
+        string visitedPlaces = PlayerPrefs.GetString("visitedPlacesData");
+        string[] stringArray = visitedPlaces.Split(',');
 
-       
-        if (clearedStage!=string.Empty)
+        if (visitedPlaces != string.Empty)
         {
-            Debug.Log("저장된 데이터가 있습니다.");
-            // 정수 배열로 변환
+            Debug.Log("Load the visited places data");
+            // Convert data type of the array from string to int
             int[] serializedData = new int[stringArray.Length];
             for (int i = 0; i < stringArray.Length; i++)
             {
                 int.TryParse(stringArray[i], out serializedData[i]);
             }
 
-
             return serializedData;
-          
         }
-     
-         Debug.Log("저장된 데이터가 없습니다.");
-   
+
+        Debug.Log("Cannot find the data of visited places");
 
         return null;
-       
-    }
-   
-    public int[] getClearedStage()
-    {
-
-        return stageClearInfo;
 
     }
+
+
     public void ClearStage(int stage_num)
     {
         stageClearInfo[stage_num] = 1;
-        
+
     }
+
+    // #JES: 
+    public void ClearStage(int stage_num, int place_num)
+    {
+        stageClearInfo[stage_num] = place_num;
+    }
+
 
     public void Save()
     {
-        Debug.Log("저장");
-        string serializedData = string.Join(",", stageClearInfo.Select(x => x.ToString()).ToArray());
-        PlayerPrefs.SetString("stageClearData", serializedData);
+
+        Debug.Log("saving data for visited places");
+        string placeSerializedData = string.Join(",", visitedPlaceInfo.Select(x => x.ToString()).ToArray());
+        PlayerPrefs.SetString("visitedPlacesData", placeSerializedData);
     }
+
 
     public int isCleared(int stage_num)
     {
         return stageClearInfo[stage_num];
     }
 
- 
+    // #JES
+    public int[] getVisitedPlaces()
+    {
+
+        return visitedPlaceInfo;
+
+    }
+    public void VisitPlace(int place_num)
+    {
+        visitedPlaceInfo[place_num] = 1;
+
+    }
+
+
+    public int isVisited(int place_num)
+    {
+        return visitedPlaceInfo[place_num];
+    }
+
+
 }

@@ -24,7 +24,7 @@ public class DialogueSystem : MonoBehaviour
 
     // Start is called before the first frame update
 
-    private void Start()
+    private void Awake()
     {
         // 딕셔너리에 데이터 추가
         bubbleMap.Add(0, translucentBubble);

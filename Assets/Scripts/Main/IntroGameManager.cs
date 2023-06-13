@@ -9,6 +9,9 @@ public class IntroGameManager : MonoBehaviour
     public  GameObject bg2;
     public  GameObject pictureGuide;
 
+    public Dialogue dialogue1;
+    public Dialogue dialogue2;
+    public Dialogue dialogue3;
 
     public static bool doesDialogue1End=false;
     public static bool doesDialogue2End=false;
@@ -25,7 +28,7 @@ public class IntroGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogueTrigger.Dialogue1Trigger();// 대화1 시작
+        dialogueTrigger.dialogueTrigger(dialogue1);// 대화1 시작
     }
 
    
@@ -61,7 +64,7 @@ public class IntroGameManager : MonoBehaviour
 
         bg1.SetActive(false);
         bg2.SetActive(true);
-        dialogueTrigger.Dialogue2Trigger();// 대화2 시작
+        dialogueTrigger.dialogueTrigger(dialogue2);// 대화2 시작
         Debug.Log("Dialogue2Start");
        
 
@@ -99,7 +102,7 @@ public class IntroGameManager : MonoBehaviour
     {
 
    
-        dialogueTrigger.Dialogue3Trigger();// 대화2 시작
+        dialogueTrigger.dialogueTrigger(dialogue3);// 대화2 시작
 
 
 

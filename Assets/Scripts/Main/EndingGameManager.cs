@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 [SerializeField]
 public class EndingGameManager : MonoBehaviour
@@ -42,9 +42,9 @@ public class EndingGameManager : MonoBehaviour
         Debug.Log("Á¾·á!");
 
         gameDataManager.Save(); // save visited places
- 
+        SceneManager.LoadScene("Main");
 
-       
+
     }
   
 }

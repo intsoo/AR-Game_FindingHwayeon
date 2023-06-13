@@ -19,6 +19,9 @@ public class IntroGameManager : MonoBehaviour
     public DialogueTrigger dialogueTrigger;
 
 
+    // #JES
+    private GameObject dontDestroy;
+    private int gameStage;
 
     /**
      * Dialogue1 : ���ΰ� ����
@@ -30,8 +33,19 @@ public class IntroGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dontDestroy = GameObject.Find("DontDestroy");
+        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        Debug.Log("Stage: " + gameStage);
 
-        dialogueTrigger.dialogueTrigger(dialogue1);// ��ȭ1 ����
+        if(gameStage == 1)
+            dialogueTrigger.dialogueTrigger(dialogue1);
+        else if(gameStage == 2)
+            dialogueTrigger.dialogueTrigger(dialogue3);
+        else if(gameStage == 3)
+            Dialogue3Start();   
+
+
+        // dialogueTrigger.dialogueTrigger(dialogue1);// ��ȭ1 ����
     }
 
    

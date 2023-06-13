@@ -13,20 +13,31 @@ public class MinigameManager : MonoBehaviour
     private Text playerGuideText;
 
 
-    private void Awake()
+    // #JES
+    private GameObject dontDestroy;
+    private int gameStage;
+
+
+
+    private void Start()
     {
         // When the scene is loaded, the gameover panel should be invisible
         gameoverPanel = GameObject.Find("Canvas").transform.Find("GameoverPanel").gameObject;
         gameoverPanel.SetActive(false);
 
+
         // Player Guide
         playerGuideText = GameObject.Find("PlayerGuideText").GetComponent<Text>();
+
+        generateGuidelines();
+
+
+        // Stage Info
+        dontDestroy = GameObject.Find("DontDestroy");
+        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        Debug.Log("Stage: " + gameStage);
     }
 
-    private void Start()
-    {
-        generateGuidelines();
-    }
 
     public void onClickRestartMinigame()
     {
@@ -40,14 +51,20 @@ public class MinigameManager : MonoBehaviour
     public void moveStage()
     {
 
-        // GameObject.Find("DontDestroy").GetComponent<DontDestroyOnLoad>().showIntroPanel = true;
-        SceneManager.LoadScene("Minigame2");       
+        dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage++;
+        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        Debug.Log("Stage: " + gameStage);
+
+        if(gameStage == 2)
+            SceneManager.LoadScene("Intro2");    
+        else if(gameStage == 3)
+            SceneManager.LoadScene("Yoora");    
 
     }
 
     public void endMinigame()
     {
-        Debug.Log("GAME OVER!");
+        // Debug.Log("GAME OVER!");
 
         gameoverPanel.SetActive(true);
 

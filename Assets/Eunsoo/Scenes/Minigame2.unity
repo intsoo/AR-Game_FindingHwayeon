@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4577582588698455082, guid: c168a15b311364bb9bc3b353439aa73b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4580896021459843132, guid: c168a15b311364bb9bc3b353439aa73b, type: 3}
       propertyPath: m_RootOrder
@@ -935,6 +935,7 @@ MonoBehaviour:
   positionY: 0.4
   prefab:
   - {fileID: 2904627562537340954, guid: e101e7c6c2f9e4c0493b837dbfe7f6d0, type: 3}
+  isAlreadyTouched2: 0
 --- !u!114 &702245233
 MonoBehaviour:
   m_ObjectHideFlags: 0

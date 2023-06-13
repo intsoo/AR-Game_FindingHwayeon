@@ -7,7 +7,8 @@ public class DontDestroyOnLoad : MonoBehaviour
     public static DontDestroyOnLoad Instance;
 
     public int place = 3;
-    public bool showIntroPanel;
+    public int gameStage = 1;
+    public int stageStep = 1;
 
     private void Awake()
     {

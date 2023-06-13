@@ -1169,13 +1169,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7362448151178834362, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
+      propertyPath: m_Center.y
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 7404224886718831454, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
       propertyPath: m_Name
       value: Bowl_test
       objectReference: {fileID: 0}
     - target: {fileID: 7404224886718831454, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7409930997439188808, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
       propertyPath: m_RootOrder
@@ -1183,15 +1187,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7409930997439188808, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7409930997439188808, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7409930997439188808, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7409930997439188808, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
       propertyPath: m_LocalPosition.x

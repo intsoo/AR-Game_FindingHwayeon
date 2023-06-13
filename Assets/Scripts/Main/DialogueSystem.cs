@@ -170,7 +170,8 @@ public class DialogueSystem : MonoBehaviour
             Debug.Log("Start Minigame 1");
 
             // Convert to minigame scene (throwing food into feed the cat)
-            gameSceneManager.StartMinigame1();
+            gameSceneManager.convertScene();
+            
         }
         
 

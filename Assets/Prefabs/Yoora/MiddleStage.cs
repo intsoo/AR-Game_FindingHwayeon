@@ -9,7 +9,7 @@ public class MiddleStage : MonoBehaviour
     private int stage = 0; // ���� �������� ����
     private bool isStage2Activated = false; // stage 2���� Ȱ��ȭ�� �г� ���� Ȯ���� ���� ����
 
-    private float fadeTime = 1f; // ���̵� �ð� ����
+    private float fadeTime = 1.5f; // ���̵� �ð� ����
     private float accumTime; // ��� �ð�
 
     private void Update()

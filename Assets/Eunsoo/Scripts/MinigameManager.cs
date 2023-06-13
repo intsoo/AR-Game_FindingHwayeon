@@ -30,25 +30,41 @@ public class MinigameManager : MonoBehaviour
 
     public void onClickRestartMinigame()
     {
-        print("RESTART!");
+        Debug.Log("RESTART!");
 
         // Load the minigame scene again
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 
-    public void showGameoverPanel()
+    public void moveStage()
     {
-        print("GAME OVER!");
+
+        // GameObject.Find("DontDestroy").GetComponent<DontDestroyOnLoad>().showIntroPanel = true;
+        SceneManager.LoadScene("Minigame2");       
+
+    }
+
+    public void endMinigame()
+    {
+        Debug.Log("GAME OVER!");
 
         gameoverPanel.SetActive(true);
+
+        #if UNITY_EDITOR
+        if(Input.GetMouseButtonDown(0)) 
+        {
+            moveStage();
+        }
+        #else
+        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) 
+        {
+            moveStage();
+        }
+        #endif
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void generateGuidelines()
     {

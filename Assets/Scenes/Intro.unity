@@ -556,6 +556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 314871896}
+  - component: {fileID: 314871897}
   m_Layer: 5
   m_Name: GUI
   m_TagString: Untagged
@@ -588,6 +589,23 @@ RectTransform:
   m_AnchoredPosition: {x: -0.019989014, y: -0.11194}
   m_SizeDelta: {x: 799.96, y: 1421.2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &314871897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314871895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c882b0cb480ed3a41bbd06aa678811f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steps:
+  - {fileID: 716290839}
+  - {fileID: 390036572}
+  - {fileID: 1272653503}
+  - {fileID: 1489071797}
 --- !u!1 &328386410
 GameObject:
   m_ObjectHideFlags: 0

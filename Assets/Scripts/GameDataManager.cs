@@ -102,5 +102,17 @@ public class GameDataManager : MonoBehaviour
         return visitedPlaceInfo[place_num];
     }
 
+    public int getNumOfVisitedPlace()
+    {
+        int cnt = 0;
+        for(int i=0;i<visitedPlaceInfo.Length;i++)
+        {
+            if (visitedPlaceInfo[i] != 0)
+            {
+                cnt++;
+            }
+        }
 
+        return cnt;
+    }
 }

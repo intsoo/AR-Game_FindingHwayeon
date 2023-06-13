@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [SerializeField]
 public class Interface : MonoBehaviour
 {
     public GameObject[] steps;
-    
+    public AudioSource audioSource;
+    public GameObject soundOnImage;
+    public GameObject soundOffImage;
+    public static bool musicState = true; // 0:off, 1: on  
+
+    public TextMeshProUGUI numOfVisitedPlace;
+
 
     private void Start()
     {
@@ -14,6 +22,7 @@ public class Interface : MonoBehaviour
 
 
         UpdateProgress();
+        updateVisitedPlace();
 
 
     }
@@ -36,6 +45,40 @@ public class Interface : MonoBehaviour
 
         }
     }
+
+    public void onClickHome()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public void onSound()
+    {
+        audioSource.mute = false; 
+        musicState = true;
+
+        soundOnImage.SetActive(true);
+        soundOffImage.SetActive(false);
+    }
+
+    public void offSound()
+    {
+
+        audioSource.mute = true;
+        musicState = false;
+
+        soundOnImage.SetActive(false);
+        soundOffImage.SetActive(true);
+    }
+
+    public void updateVisitedPlace()
+    {
+        GameDataManager gameDataManager = new GameDataManager();
+
+        numOfVisitedPlace.text = "Visited: " + gameDataManager.getNumOfVisitedPlace() + " / 10";
+
+
+    }
+
     public void UpdateProgress() // update cleared stage 
     {
 

@@ -21,7 +21,7 @@ public class Scoring : MonoBehaviour
 
     private void Update()
     {
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString() +  " / 100 ";
 
         if (score >= 100) //100점 넘으면 성공.
         {

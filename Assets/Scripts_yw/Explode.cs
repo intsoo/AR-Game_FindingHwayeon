@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Explode : MonoBehaviour
 {
@@ -12,12 +13,56 @@ public class Explode : MonoBehaviour
     public float waitTime = 3.0f;
     bool bulletCollission = false; // to avoid hittimg multiple dpiders with same bullet
 
+    //Scoring
+    TextMeshProUGUI scoreText;
+    GameObject scoreBoardUI;
+    TextMeshProUGUI gameSuccessText;
+    public static int score;
+
+    //Audio
+    AudioSource audioSoure;
+
+    //GameSceneManger
+    GameSceneManager gameSceneManager;
+
+    void Start()
+    {
+        audioSoure = GetComponent<AudioSource>();
+
+        //gameObject.GetComponent<Shoot>().enabled = true;
+        //scoreBoardUI = GameObject.FindGameObjectWithTag("ScoreCanvas");
+        //scoreText = GameObject.FindGameObjectWithTag("ScoreOnBanner").GetComponent<TextMeshProUGUI>();
+        //gameSuccessText = GameObject.FindGameObjectWithTag("GameSuccessText").GetComponent<TextMeshProUGUI>();
+        //gameSuccessText.gameObject.SetActive(false);  
+    }
+
+    void Update()
+    {
+        //scoreText.text = "Score: " + score.ToString();
+
+        //score += 1;
+
+        //if (score >= 500) 
+        //{
+        //    //Game Success Text 띄우기
+        //    gameSuccessText.gameObject.SetActive(true);
+
+        //    //거미 다 없애기
+        //    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Spider");
+        //    foreach (GameObject enemy in enemies)
+        //        Destroy(enemy);
+
+        //    gameSceneManager.convertScene();
+        //}
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "Spider" && bulletCollission == false)
         {
             Destroy(collision.transform.gameObject); // destroy spider
-            Scoring.score += 5;
+            score += 5;
+            audioSoure.Play(); //거미 죽었을때 소리 재생
 
             bulletCollission = true;
 
@@ -34,7 +79,6 @@ public class Explode : MonoBehaviour
         Instantiate(enemyToSpawn, killPos, killRot);
         bulletCollission = false;
         Destroy(gameObject); // destroy bullet
-
     }
 }
 

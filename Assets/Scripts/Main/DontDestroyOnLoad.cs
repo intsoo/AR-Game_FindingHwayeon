@@ -9,6 +9,10 @@ public class DontDestroyOnLoad : MonoBehaviour
     public int place = 3;
     public int gameStage = 1;
     public int stageStep = 1;
+    public int[] visitedPlaces = {0,0,0,0,0,0,0,0};
+
+    public bool saveData = false;
+
 
     private void Awake()
     {
@@ -19,6 +23,11 @@ public class DontDestroyOnLoad : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // visitedPlaces[0] = 1;
+        // visitedPlaces[1] = 1;
+
+
     }
 
 }

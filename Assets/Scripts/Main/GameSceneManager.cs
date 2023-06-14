@@ -10,6 +10,8 @@ public class GameSceneManager : MonoBehaviour
     public GameObject dontDestroy;
     public int gameStage;
     public int stageStep;
+    
+
 
     public void Start() {
         dontDestroy = GameObject.Find("DontDestroy");
@@ -41,8 +43,8 @@ public class GameSceneManager : MonoBehaviour
                 // 1.2. Intro Scene
                 case 2:
                     dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
-                    // GoToIntrox2);
-                    SceneManager.LoadScene("Intro_bckup");  
+                    GoToIntro(2);
+                    // SceneManager.LoadScene("Intro_bckup");  
    
                     break;                 
                 // 1.3. Minigame
@@ -53,8 +55,8 @@ public class GameSceneManager : MonoBehaviour
                 case 4: 
                     dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep = 1;
                     dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage++;
-                    // GoToIntro(3);
-                    SceneManager.LoadScene("Intro_bckup");  
+                    GoToIntro(3);
+                    // SceneManager.LoadScene("Intro_bckup");  
 
                     break;                 
             }
@@ -70,6 +72,7 @@ public class GameSceneManager : MonoBehaviour
                     break;
                 // 2.2. Minigame 2
                 case 2:
+                    // StartMinigame(1);  // 거미 슈팅
                     StartMinigame(gameStage);  // 거미 슈팅
                     break;
             }
@@ -93,9 +96,12 @@ public class GameSceneManager : MonoBehaviour
         else if(gameStage == 4)  // 4. Ending
         {
             GoToEnding();
+            dontDestroy.GetComponent<DontDestroyOnLoad>().saveData = true;
+
         }
 
     }
+
 
     public void StartMinigame(int gameStage) // throwing food into cat bowl
     {

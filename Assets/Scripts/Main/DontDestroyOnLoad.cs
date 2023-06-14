@@ -6,7 +6,6 @@ public class DontDestroyOnLoad : MonoBehaviour
 {
     public static DontDestroyOnLoad Instance;
 
-    public int place = 3;
     public int gameStage = 1;
     public int stageStep = 1;
     public int[] visitedPlaces = {0,0,0,0,0,0,0,0};

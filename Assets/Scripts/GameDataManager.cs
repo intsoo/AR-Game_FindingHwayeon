@@ -143,6 +143,6 @@ public class GameDataManager : MonoBehaviour
             }
         }
 
-        return cnt;
+        return cnt+2;  // first, last places
     }
 }

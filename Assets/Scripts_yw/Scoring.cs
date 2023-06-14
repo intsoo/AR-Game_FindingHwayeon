@@ -48,6 +48,7 @@ public class Scoring : MonoBehaviour
         endMinigame();
 
         scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString() +  " / 100 ";
 
         if (score >= 100) //100�� ������ ����.
         {

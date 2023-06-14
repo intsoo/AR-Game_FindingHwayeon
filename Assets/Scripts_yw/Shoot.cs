@@ -28,11 +28,11 @@ public class Shoot : MonoBehaviour
     private void Awake()
     {
         scoreText = GameObject.Find("SuccessScoreText").GetComponent<Text>();
-        scoreText.text = "점수: " + currentScore + "/" + targetScore;
+        scoreText.text = "Score : " + currentScore + "/" + targetScore;
 
         // Player Guide
         playerGuideText = GameObject.Find("PlayerGuideText").GetComponent<Text>();
-        playerGuideText.text = "평면을 인식 중입니다.";
+        playerGuideText.text = "Recognizing plane.\nPlease touch the red target \nwhen it appears.";
     }
 
     void Start()
@@ -44,7 +44,7 @@ public class Shoot : MonoBehaviour
 
         // Player Guide
         //playerGuideText = GameObject.Find("PlayerGuideText").GetComponent<Text>();
-        playerGuideText.text = "평면을 인식 중입니다."; 
+        playerGuideText.text = "Recognizing plane.\nPlease touch the red target \nwhen it appears."; 
     }
 
     void Update()
@@ -67,7 +67,7 @@ public class Shoot : MonoBehaviour
         //}
 
         // 점수 표시
-        scoreText.text = "점수: " + currentScore + "/" + targetScore;
+        scoreText.text = "Score : " + currentScore + "/" + targetScore;
 
         // 점수 확인
         if (currentScore >= targetScore) 

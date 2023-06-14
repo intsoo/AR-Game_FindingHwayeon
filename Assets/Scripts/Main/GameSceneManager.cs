@@ -72,7 +72,7 @@ public class GameSceneManager : MonoBehaviour
                     break;
                 // 2.2. Minigame 2
                 case 2:
-                    StartMinigame(1);  // 거미 슈팅
+                    StartMinigame(1);  // 거미말고~ㅋㅋ
                     // StartMinigame(gameStage);  // 거미 슈팅
                     break;
             }
@@ -96,6 +96,8 @@ public class GameSceneManager : MonoBehaviour
         else if(gameStage == 4)  // 4. Ending
         {
             GoToEnding();
+            dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage = 1;
+            dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep = 1;
             dontDestroy.GetComponent<DontDestroyOnLoad>().saveData = true;
 
         }

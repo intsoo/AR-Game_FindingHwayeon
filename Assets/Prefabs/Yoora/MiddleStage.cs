@@ -59,18 +59,18 @@ public class MiddleStage : MonoBehaviour
         // ��ġ �Է��� �����Ͽ� stage ���� ����
 
         // #JES: Use mouse in Unity Editor
+        #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0))  // if mouse left is clicked 
-{
+        {
 
-            if (ARTrackedMultiImageManager.imageRecognized)
+            // if (ARTrackedMultiImageManager.imageRecognized)
             {
-                ARTrackedMultiImageManager.imageRecognized = false;
-                // 이미지가 인식되었을 경우 stage 변수 변경
+                // ARTrackedMultiImageManager.imageRecognized = false;
                 dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
                 gameSceneManager.convertScene();
             }
-}
-
+        }
+        #else
         // If image perception succeeded 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -83,7 +83,7 @@ public class MiddleStage : MonoBehaviour
                 gameSceneManager.convertScene();
             }
         }
-
+        #endif
 
 
 

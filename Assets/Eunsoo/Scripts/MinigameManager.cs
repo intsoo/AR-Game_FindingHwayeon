@@ -18,6 +18,8 @@ public class MinigameManager : MonoBehaviour
     private int gameStage;
     private int stageStep;
 
+    public GameObject bowlTest;
+
     GameSceneManager gameSceneManager;
 
 
@@ -25,6 +27,11 @@ public class MinigameManager : MonoBehaviour
 
     private void Start()
     {
+        #if UNITY_EDITOR
+        // bowlTest = GameObject.Find("Bowl_test");
+        bowlTest.SetActive(true);
+        #endif
+
         // When the scene is loaded, the gameover panel should be invisible
         gameoverPanel = GameObject.Find("Canvas").transform.Find("GameoverPanel").gameObject;
         gameoverPanel.SetActive(false);

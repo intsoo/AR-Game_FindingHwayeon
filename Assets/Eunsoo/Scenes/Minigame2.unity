@@ -325,7 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35429512d040e4a62b946e618ae36135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameoverPanel: {fileID: 0}
+  gameoverPanel: {fileID: 2023870029}
+  bowlTest: {fileID: 310740352}
 --- !u!1001 &310740351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,11 +336,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4577582588698455082, guid: c168a15b311364bb9bc3b353439aa73b, type: 3}
       propertyPath: m_Name
-      value: Trashcan_test
+      value: Bowl_test
       objectReference: {fileID: 0}
     - target: {fileID: 4577582588698455082, guid: c168a15b311364bb9bc3b353439aa73b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4580896021459843132, guid: c168a15b311364bb9bc3b353439aa73b, type: 3}
       propertyPath: m_RootOrder
@@ -399,6 +400,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c168a15b311364bb9bc3b353439aa73b, type: 3}
+--- !u!1 &310740352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4577582588698455082, guid: c168a15b311364bb9bc3b353439aa73b, type: 3}
+  m_PrefabInstance: {fileID: 310740351}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &400034126
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb8dda5a7ee0499c9cb9204a3d5fd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroy: {fileID: 0}
+  gameStage: 0
+  stageStep: 0
 --- !u!4 &469143006
 Transform:
   m_ObjectHideFlags: 0

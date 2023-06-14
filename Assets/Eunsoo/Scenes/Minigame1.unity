@@ -326,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameoverPanel: {fileID: 2023870029}
+  bowlTest: {fileID: 1768000028}
 --- !u!1 &400034126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb8dda5a7ee0499c9cb9204a3d5fd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroy: {fileID: 0}
+  gameStage: 0
+  stageStep: 0
 --- !u!4 &1159499519
 Transform:
   m_ObjectHideFlags: 0
@@ -1223,7 +1227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7404224886718831454, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7409930997439188808, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
       propertyPath: m_RootOrder
@@ -1283,6 +1287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
+--- !u!1 &1768000028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7404224886718831454, guid: d1c3a603f31594e958aa2aebd9c6b439, type: 3}
+  m_PrefabInstance: {fileID: 1768000027}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1980838941
 GameObject:
   m_ObjectHideFlags: 0

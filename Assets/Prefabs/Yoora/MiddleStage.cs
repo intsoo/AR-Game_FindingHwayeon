@@ -21,8 +21,7 @@ public class MiddleStage : MonoBehaviour
     private int stageStep;
     public GameSceneManager gameSceneManager;
 
-    public ARTrackedImageManager trackedImageManager;
-    private bool imageRecognized = false;
+    
 
 
 
@@ -49,9 +48,9 @@ public class MiddleStage : MonoBehaviour
         if (Input.GetMouseButtonDown(0))  // if mouse left is clicked 
 {
 
-            if (imageRecognized)
+            if (ARTrackedMultiImageManager.imageRecognized)
             {
-                imageRecognized = false;
+                ARTrackedMultiImageManager.imageRecognized = false;
                 // 이미지가 인식되었을 경우 stage 변수 변경
                 dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
                 gameSceneManager.convertScene();
@@ -62,9 +61,9 @@ public class MiddleStage : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
 
-            if (imageRecognized)
+            if (ARTrackedMultiImageManager.imageRecognized)
             {
-                imageRecognized = false;    
+                ARTrackedMultiImageManager.imageRecognized = false;    
                 // 이미지가 인식되었을 경우 stage 변수 변경
                 dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
                 gameSceneManager.convertScene();
@@ -126,7 +125,7 @@ public class MiddleStage : MonoBehaviour
         StartCoroutine(FadeIn(selectedPanel, 0f));
     }
 
-    private void OnEnable()
+   /* private void OnEnable()
     {
         trackedImageManager.trackedImagesChanged += OnTrackedImagesChanged; // 이미지 추적 상태 변화 이벤트에 대한 핸들러 등록
     }
@@ -144,7 +143,7 @@ public class MiddleStage : MonoBehaviour
             imageRecognized = true;
 
         }
-    }
+    }*/
 
   
 

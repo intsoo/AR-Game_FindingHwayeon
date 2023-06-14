@@ -743,7 +743,6 @@ MonoBehaviour:
   - {fileID: 24941309}
   - {fileID: 268523269}
   gameSceneManager: {fileID: 392510023}
-  trackedImageManager: {fileID: 1157059713}
 --- !u!1 &206787133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,7 +3145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedLibrary: {fileID: 11400000, guid: 0b56d7426213db94dbbe2f495535992c, type: 2}
   m_MaxNumberOfMovingImages: 0
-  m_TrackedImagePrefab: {fileID: 7250516815683747091, guid: 4ab933ccf22263a429baf32b273b0c8d, type: 3}
+  m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &1157059714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3154,22 +3153,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157059705}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 886cbe3f979fa7d48862c4fc175017b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trackedPrefabs:
-  - {fileID: 1408510287193631922, guid: be9f0ef657ba07241b1c609ff8bcf8d4, type: 3}
-  - {fileID: 1408510287193631922, guid: 7caf0f9c29b530e408292bd49caa8700, type: 3}
-  - {fileID: 1408510287193631922, guid: e5c43669dde27204d86961f96f9524f0, type: 3}
-  - {fileID: 1408510287193631922, guid: a5b77ada0caedec4d808aae141fe66ac, type: 3}
-  - {fileID: 1408510287193631922, guid: c0c88fc7f53da5d44961b8fd9e7d5cad, type: 3}
-  - {fileID: 1408510287193631922, guid: d290e22071e11e54fb722b30c323c1bb, type: 3}
-  - {fileID: 1408510287193631922, guid: 446e7f46921431a4480d81e36c95cb0d, type: 3}
-  - {fileID: 1408510287193631922, guid: 551995d19abfc314cb58380231309039, type: 3}
-  - {fileID: 1408510287193631922, guid: 7dc930a00312eb44a92c1b8d1ae91ed1, type: 3}
-  - {fileID: 1408510287193631922, guid: 87fb7b6f758da99479d54e2a8bfdec6b, type: 3}
+  - {fileID: 7250516815683747091, guid: 0c7350e96f2b8a440ad3d38f91f7b205, type: 3}
+  - {fileID: 7250516815683747091, guid: 2ec0879487f7b1e4c9454f8f2b13ae7c, type: 3}
+  - {fileID: 7250516815683747091, guid: 4ab933ccf22263a429baf32b273b0c8d, type: 3}
+  - {fileID: 7250516815683747091, guid: 1a457c847b1917849beb40437c46b5c9, type: 3}
+  - {fileID: 7250516815683747091, guid: 245ea5be6094d204d9c623ae5a8f26bd, type: 3}
+  - {fileID: 7250516815683747091, guid: 293e9ebeb3f96b34982b0612a76e955b, type: 3}
+  - {fileID: 7250516815683747091, guid: 009cb778d1a39b449b52d02be017adc6, type: 3}
+  - {fileID: 7250516815683747091, guid: a47feb85724a708409d80c64299e33c9, type: 3}
+  - {fileID: 7250516815683747091, guid: 5e58b0eb5317250479d813aadecddc74, type: 3}
+  - {fileID: 7250516815683747091, guid: 03a9c7e9f15c97e49b4fed5ad87dee7e, type: 3}
 --- !u!114 &1157059715
 MonoBehaviour:
   m_ObjectHideFlags: 0

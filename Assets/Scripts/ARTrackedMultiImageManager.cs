@@ -10,6 +10,8 @@ public class ARTrackedMultiImageManager : MonoBehaviour
     private GameObject[] trackedPrefabs; // 추적하고자 하는 이미지들에 대한 게임 오브젝트 프리팹들을 담는 배열
     private Dictionary<string, GameObject> spawnedObjects = new Dictionary<string, GameObject>(); // 추적하고 있는 이미지와 연결된 게임 오브젝트들을 담는 딕셔너리
     private ARTrackedImageManager trackedImageManager;
+    
+    public static bool imageRecognized = false;
 
     private void Awake()
     {
@@ -41,6 +43,7 @@ public class ARTrackedMultiImageManager : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             UpdateImage(trackedImage);
+            imageRecognized= true;
         }
 
         foreach (var trackedImage in eventArgs.updated)

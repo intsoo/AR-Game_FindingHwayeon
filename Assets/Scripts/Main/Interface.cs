@@ -41,6 +41,7 @@ public class Interface : MonoBehaviour
     public void Update() {
 
         CheckClearStage_tmp();
+        
 
         
 
@@ -122,7 +123,7 @@ public class Interface : MonoBehaviour
     {
         GameDataManager gameDataManager = new GameDataManager();
 
-        numOfVisitedPlace.text = "Visited: " + gameDataManager.getNumOfVisitedPlace() + " / 10";
+        numOfVisitedPlace.text = "Visited: " + gameDataManager.getNumOfVisitedPlace() + " / 8";
 
 
     }

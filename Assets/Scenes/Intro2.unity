@@ -652,7 +652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3dba1b0a8df4577bce1af19ac80a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  place: 3
   gameStage: 1
   stageStep: 2
   visitedPlaces: 0000000000000000000000000000000000000000000000000000000000000000
@@ -1285,24 +1284,24 @@ MonoBehaviour:
       \uB3CC\uB824\uC8FC\uB294 \uD559\uC0DD\uC5D0\uAC8C\uB294 \uB05D\uB0B4\uC8FC\uB294
       \uD589\uC6B4\uC774 \uCC3E\uC544\uC628\uB2E4\uB294 \uC804\uC124\uC774..!!"
     bubbleType: 3
-    clip: {fileID: 0}
+    clip: {fileID: 913533310}
     transform: {x: 0, y: 0}
   - name: ??
     sentence: "\uB0B4\uAC00 \uD654\uC5EC\uB2C8\uB97C \uCC3E\uC744 \uC218 \uC788\uAC8C
       \uB3C4\uC640\uC8FC\uC9C0."
     bubbleType: 3
-    clip: {fileID: 0}
+    clip: {fileID: 913533310}
     transform: {x: 0, y: 0}
   - name: ??
     sentence: "\uC6B0\uC120.. (\uAF2C\uB974\uB975 \uAF2C\uB974\uB975)"
     bubbleType: 3
-    clip: {fileID: 0}
+    clip: {fileID: 913533310}
     transform: {x: 0, y: 0}
   - name: ??
     sentence: "\uBC30\uAC00 \uB108\uBB34 \uACE0\uD30C\uC11C \uB9D0\uC744 \uC774\uC5B4\uB098\uAC08
       \uC218\uAC00 \uC5C6\uC5B4."
     bubbleType: 3
-    clip: {fileID: 0}
+    clip: {fileID: 913533310}
     transform: {x: 0, y: 0}
   - name: 'Stage1 : MiniGame'
     sentence: "\uBC30\uACE0\uD508 \uBD09\uC6D0\uC774\uC5D0\uAC8C \uBC25\uC744 \uC8FC\uC138\uC694."

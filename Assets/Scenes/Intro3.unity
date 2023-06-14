@@ -1027,13 +1027,13 @@ MonoBehaviour:
     sentence: "\uCA5D\uCA5D.. \uACE0\uB9C8\uC6CC. \uD654\uC5EC\uB2C8\uB97C \uCC3E\uB294
       \uB370 \uB3C4\uC6C0\uC774 \uB418\uB294 \uCABD\uC9C0\uB97C \uC904\uAC8C"
     bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
+    clip: {fileID: 913533310}
+    transform: {x: 0, y: 200}
   - name: 
     sentence: "\uBD09\uC6D0\uC774\uAC00 \uC900 \uCABD\uC9C0\uB97C \uC774\uC6A9\uD574
       \uACF5\uB300 \uC548\uC5D0 \uC788\uB294 \uD654\uC5EC\uB2C8\uB97C \uCC3E\uC544\uBCF4\uC138\uC694!"
     bubbleType: 1
-    clip: {fileID: 0}
+    clip: {fileID: 913533310}
     transform: {x: 0, y: 0}
 --- !u!114 &456411118
 MonoBehaviour:
@@ -5617,7 +5617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3dba1b0a8df4577bce1af19ac80a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  place: 3
   gameStage: 1
   stageStep: 3
   visitedPlaces: 0000000000000000000000000000000000000000000000000000000000000000

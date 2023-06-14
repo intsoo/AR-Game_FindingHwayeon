@@ -134,6 +134,15 @@ public class GameDataManager : MonoBehaviour
 
     public int getNumOfVisitedPlace()
     {
+        // #JES
+        int[] placeSerializedData = Load();
+
+        // #JES
+        if (placeSerializedData != null)
+        {
+            visitedPlaceInfo = placeSerializedData;
+        }
+
         int cnt = 0;
         for(int i=0;i<visitedPlaceInfo.Length;i++)
         {
@@ -143,6 +152,6 @@ public class GameDataManager : MonoBehaviour
             }
         }
 
-        return cnt+2;  // first, last places
+        return cnt;  // first, last places
     }
 }

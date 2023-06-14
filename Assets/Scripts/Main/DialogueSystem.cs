@@ -175,6 +175,10 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
+            // JES: 씬 전환 할 떄마다 static 변수들 재설정
+            IntroGameManager.doesDialogue1End = false;
+            IntroGameManager.doesDialogue1End = false;
+
             // Convert to minigame scene (throwing food into feed the cat)
             gameSceneManager.convertScene();
             

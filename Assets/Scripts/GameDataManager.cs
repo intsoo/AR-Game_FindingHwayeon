@@ -15,10 +15,19 @@ public class GameDataManager : MonoBehaviour
 
 
     public GameObject dontDestroy;
+    public int gameStage;
+    public int stageStep;
+
 
 
     private void Awake()
     {
+
+        dontDestroy = GameObject.Find("DontDestroy");
+        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        stageStep = dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep;
+
+
 
         // #JES
         int[] placeSerializedData = Load();
@@ -30,14 +39,27 @@ public class GameDataManager : MonoBehaviour
             visitedPlaceInfo = placeSerializedData;
         }
 
-        Debug.Log(stageClearInfo[0]);
-
-
-        dontDestroy = GameObject.Find("DontDestroy");
-        dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage = 1;
-        dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep = 1;
+        Debug.Log(visitedPlaceInfo);
 
     }
+
+    // #JES: Save visited placed data in PlayerPrefs(local)
+    public void Update() 
+    {
+        for (int i = 0; i < visitedPlaceInfo.Length; i++)
+        {
+            if(dontDestroy.GetComponent<DontDestroyOnLoad>().visitedPlaces[i] != 0)
+            { 
+                visitedPlaceInfo[i] = 1;
+                Debug.Log(i + ": " + visitedPlaceInfo[i]);
+            }
+        }
+
+        if(dontDestroy.GetComponent<DontDestroyOnLoad>().saveData == true)
+            Save();
+        
+    }
+
     public int[] Load()
     {
 

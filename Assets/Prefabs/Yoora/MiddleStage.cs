@@ -113,6 +113,10 @@ public class MiddleStage : MonoBehaviour
             panelIndex = Random.Range(0, panelCount);
         }
 
+        // #JES: Save place data in DontDestroyOnLoad Object
+        dontDestroy.GetComponent<DontDestroyOnLoad>().visitedPlaces[panelIndex] = 1;
+        
+        
         // ������ �гο� FadeIn �ִϸ��̼� ����
         CanvasGroup selectedPanel = panels[panelIndex];
         StartCoroutine(FadeIn(selectedPanel, 0f));

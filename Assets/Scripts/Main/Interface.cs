@@ -15,20 +15,68 @@ public class Interface : MonoBehaviour
 
     public TextMeshProUGUI numOfVisitedPlace;
 
+    public GameObject dontDestroy;
+    public int gameStage;
+    public int stageStep;
+
+    public GameObject check1;
+    public GameObject check2;
+    public GameObject check3;
+    public GameObject check4;
 
     private void Start()
     {
 
-
+        dontDestroy = GameObject.Find("DontDestroy");
+        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        stageStep = dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep;
+        audioSource = dontDestroy.GetComponentInChildren<AudioSource>();  // Find audiosource
 
         UpdateProgress();
         updateVisitedPlace();
 
 
     }
+
+    public void Update() {
+
+        CheckClearStage_tmp();
+
+        
+
+    }
+
+    public void CheckClearStage_tmp()
+    {
+        int stage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        // Debug.Log(check1);
+        if (stage >= 1)
+        {
+            check1.SetActive(true);
+        }
+        if (stage >= 2)
+        {
+            check2.SetActive(true);
+        }
+        if (stage >= 3)
+        {
+            check3.SetActive(true);
+        }
+        if (stage >= 4)
+        {
+            check4.SetActive(true);
+        }
+
+
+    }
+
+
+
     public void CheckClearStage(int stage_num)
     {
-        if (GameDataManager.stageClearInfo[stage_num] != 0)
+        if(gameStage != 0)
+        // if(dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage != 0)
+        // if (GameDataManager.stageClearInfo[stage_num] != 0)
         {
 
 

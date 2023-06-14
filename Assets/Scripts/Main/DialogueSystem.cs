@@ -155,6 +155,14 @@ public class DialogueSystem : MonoBehaviour
         IntroGameManager introGameManager = FindObjectOfType<IntroGameManager>();
         GameSceneManager gameSceneManager = FindObjectOfType<GameSceneManager>();
 
+        // if(gameStage == 1 && stageStep == 1)
+        // {
+        //     IntroGameManager.doesDialogue1End = true;
+        //     introGameManager.Dialogue1End();
+        //     introGameManager.Dialogue2End();
+
+        // }
+
         if (IntroGameManager.doesDialogue1End == false)
         {
             IntroGameManager.doesDialogue1End = true;
@@ -167,8 +175,6 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
-            Debug.Log("Start Minigame 1");
-
             // Convert to minigame scene (throwing food into feed the cat)
             gameSceneManager.convertScene();
             

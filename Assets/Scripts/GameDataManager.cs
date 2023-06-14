@@ -14,6 +14,9 @@ public class GameDataManager : MonoBehaviour
     public static int[] visitedPlaceInfo = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
 
+    public GameObject dontDestroy;
+
+
     private void Awake()
     {
 
@@ -28,6 +31,11 @@ public class GameDataManager : MonoBehaviour
         }
 
         Debug.Log(stageClearInfo[0]);
+
+
+        dontDestroy = GameObject.Find("DontDestroy");
+        dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage = 1;
+        dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep = 1;
 
     }
     public int[] Load()

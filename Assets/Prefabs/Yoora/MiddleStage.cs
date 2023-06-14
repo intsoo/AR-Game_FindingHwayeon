@@ -12,6 +12,30 @@ public class MiddleStage : MonoBehaviour
     private float fadeTime = 1.5f; // ���̵� �ð� ����
     private float accumTime; // ��� �ð�
 
+
+    // #JES
+    private GameObject dontDestroy;
+    private int gameStage;
+    private int stageStep;
+    public GameSceneManager gameSceneManager;
+
+
+
+    public void Start() {
+        dontDestroy = GameObject.Find("DontDestroy");
+        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        stageStep = dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep;
+
+        // Debug.Log("Stage: " + gameStage);
+        // Debug.Log("- Step: " + stageStep);
+
+        // Game Scene Manager
+        gameSceneManager = FindObjectOfType<GameSceneManager>();
+
+    }
+
+
+
     private void Update()
     {
         // ��ġ �Է��� �����Ͽ� stage ���� ����
@@ -20,26 +44,47 @@ public class MiddleStage : MonoBehaviour
         #if UNITY_EDITOR
         if(Input.GetMouseButtonDown(0))  // if mouse left is clicked 
         {
-            stage++;
-            Debug.Log("Stage " + stage);
+            int gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+            dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
+            // Debug.Log("Stage: " + dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage);
+
+            gameSceneManager.convertScene();   
+
         }
+
         #else
+        // If image perception succeded 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            stage++;
+            int gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+            dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
+            // if(dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage < 4)
+            // {
+            //     dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage++;
+            // }
+            // Debug.Log("Stage: " + dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage);
+
+            gameSceneManager.convertScene();   
+
         }
         #endif
 
-        if (stage == 2 && !isStage2Activated)
+
+        if (gameStage == 2 && !isStage2Activated)
         {
             ActivateRandomPanel(panels.Length);
             isStage2Activated = true;
         }
-        else if (stage == 3 && isStage2Activated)
+        else if (gameStage == 3 && isStage2Activated)
         {
-            ActivateRandomPanel(panels.Length - 1, stage);
+            ActivateRandomPanel(panels.Length - 1, gameStage);
             isStage2Activated = false;
         }
+    }
+
+    private void checkData()
+    {
+
     }
 
     private void ActivateRandomPanel(int panelCount, int excludedPanelIndex = -1)

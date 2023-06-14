@@ -1002,7 +1002,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c4580f297272d4782b0699b622d918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: []
+  info:
+  - name: 
+    sentence: "(\uBC30\uACE0\uD30C...)"
+    bubbleType: 3
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
 --- !u!114 &456411117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,69 +1022,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info:
   - name: "\uAE40\uC774\uD654"
-    sentence: "\uC544\uC0B0 \uACF5\uD559\uAD00 \uCABD\uBB38\uC5D0 \uB3C4\uCC29\uD588\uC2B5\uB2C8\uB2E4."
-    bubbleType: 1
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uC5B4? \uC774\uAC8C \uBB50\uC9C0?"
-    bubbleType: 2
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uD559\uC0DD\uC99D\uC744 \uBC1C\uACAC\uD588\uC2B5\uB2C8\uB2E4."
-    bubbleType: 1
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uB108 \uADF8 \uD559\uC0DD\uC99D\uC774 \uBCF4\uC774\uB2C8?"
-    bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uC5D0\uD5F4. \uB098\uB85C \uB9D0\uD560 \uAC83 \uAC19\uC73C\uBA74~"
-    bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uC774\uD654\uC5EC\uC790\uB300\uD559\uAD50 \uCD5C\uACE0 \uADC0\uC5FC\uB465\uC774~
-      \uBD09\uC6D0\uB2D8\uC774\uC2DC\uB77C\uAD6C."
-    bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uD654\uC5EC\uB2C8\uC758 \uD559\uC0DD\uC99D\uC774 \uBCF4\uC778\uB2E4\uB2C8
-      \uB108\uB294 ~~"
-    bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uD654\uC5EC\uB2C8\uB97C \uCC3E\uC544\uC11C \uD559\uC0DD\uC99D\uC744
-      \uB3CC\uB824\uC8FC\uB294 \uD559\uC0DD\uC5D0\uAC8C\uB294 \uB05D\uB0B4\uC8FC\uB294
-      \uD589\uC6B4\uC774 \uCC3E\uC544\uC628\uB2E4\uB294 \uC804\uC124\uC774..!!"
-    bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uB0B4\uAC00 \uD654\uC5EC\uB2C8\uB97C \uCC3E\uC744 \uC218 \uC788\uAC8C
-      \uB3C4\uC640\uC8FC\uC9C0."
-    bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uC6B0\uC120.. (\uAF2C\uB974\uB975 \uAF2C\uB974\uB975)"
-    bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uBC30\uAC00 \uB108\uBB34 \uACE0\uD30C\uC11C \uB9D0\uC744 \uC774\uC5B4\uB098\uAC08
-      \uC218\uAC00 \uC5C6\uC5B4."
-    bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
-  - name: "\uAE40\uC774\uD654"
-    sentence: "\uBC30\uACE0\uD508 \uBD09\uC6D0\uC774\uC5D0\uAC8C \uBC25\uC744 \uC8FC\uC138\uC694."
-    bubbleType: 1
+    sentence: "\uB098\uB294 \uC774\uB300 \uACF5\uB300\uC0DD \uAE40\uC774\uD654 "
+    bubbleType: 0
     clip: {fileID: 0}
     transform: {x: 0, y: 0}
 --- !u!114 &456411118
@@ -1094,7 +1038,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c4580f297272d4782b0699b622d918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: []
+  info:
+  - name: 
+    sentence: "\uC544\uC0B0 \uACF5\uD559\uAD00 \uCABD\uBB38\uC5D0 \uB3C4\uCC29\uD588\uC2B5\uB2C8\uB2E4."
+    bubbleType: 1
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
+  - name: 
+    sentence: "\uC5B4? \uC774\uAC8C \uBB50\uC9C0?"
+    bubbleType: 2
+    clip: {fileID: 533283668}
+    transform: {x: 0, y: 0}
+  - name: 
+    sentence: "\uD559\uC0DD\uC99D\uC744 \uBC1C\uACAC\uD588\uC2B5\uB2C8\uB2E4."
+    bubbleType: 1
+    clip: {fileID: 1633439390}
+    transform: {x: 0, y: 0}
+  - name: ??
+    sentence: "\uB108 \uADF8 \uD559\uC0DD\uC99D\uC774 \uBCF4\uC774\uB2C8?"
+    bubbleType: 3
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
+  - name: ??
+    sentence: "\uC5D0\uD5F4. \uB098\uB85C \uB9D0\uD560 \uAC83 \uAC19\uC73C\uBA74~"
+    bubbleType: 3
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
+  - name: ??
+    sentence: "\uC774\uD654\uC5EC\uC790\uB300\uD559\uAD50 \uCD5C\uACE0 \uADC0\uC5FC\uB465\uC774~
+      \uBD09\uC6D0\uB2D8\uC774\uC2DC\uB77C\uAD6C."
+    bubbleType: 3
+    clip: {fileID: 913533310}
+    transform: {x: 0, y: 200}
+  - name: ??
+    sentence: "\uD654\uC5EC\uB2C8\uC758 \uD559\uC0DD\uC99D\uC774 \uBCF4\uC778\uB2E4\uB2C8
+      \uB108\uB294 ~~"
+    bubbleType: 3
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
+  - name: ??
+    sentence: "\uD654\uC5EC\uB2C8\uB97C \uCC3E\uC544\uC11C \uD559\uC0DD\uC99D\uC744
+      \uB3CC\uB824\uC8FC\uB294 \uD559\uC0DD\uC5D0\uAC8C\uB294 \uB05D\uB0B4\uC8FC\uB294
+      \uD589\uC6B4\uC774 \uCC3E\uC544\uC628\uB2E4\uB294 \uC804\uC124\uC774..!!"
+    bubbleType: 3
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
+  - name: ??
+    sentence: "\uB0B4\uAC00 \uD654\uC5EC\uB2C8\uB97C \uCC3E\uC744 \uC218 \uC788\uAC8C
+      \uB3C4\uC640\uC8FC\uC9C0."
+    bubbleType: 3
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
+  - name: ??
+    sentence: "\uC6B0\uC120.. (\uAF2C\uB974\uB975 \uAF2C\uB974\uB975)"
+    bubbleType: 3
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
+  - name: ??
+    sentence: "\uBC30\uAC00 \uB108\uBB34 \uACE0\uD30C\uC11C \uB9D0\uC744 \uC774\uC5B4\uB098\uAC08
+      \uC218\uAC00 \uC5C6\uC5B4."
+    bubbleType: 3
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
+  - name: 'Stage1 : MiniGame'
+    sentence: "\uBC30\uACE0\uD508 \uBD09\uC6D0\uC774\uC5D0\uAC8C \uBC25\uC744 \uC8FC\uC138\uC694."
+    bubbleType: 1
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
 --- !u!114 &456411119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,7 +1117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb8dda5a7ee0499c9cb9204a3d5fd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dontDestroy: {fileID: 1643315038}
+  dontDestroy: {fileID: 0}
   gameStage: 0
   stageStep: 0
 --- !u!1 &472487855
@@ -4163,7 +4173,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c4580f297272d4782b0699b622d918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: []
+  info:
+  - name: 
+    sentence: "\uCA5D\uCA5D.. \uACE0\uB9C8\uC6CC. \uD654\uC5EC\uB2C8\uB97C \uCC3E\uB294
+      \uB370 \uB3C4\uC6C0\uC774 \uB418\uB294 \uCABD\uC9C0\uB97C \uC904\uAC8C"
+    bubbleType: 3
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
+  - name: 
+    sentence: "\uACE0\uC591\uC774\uAC00 \uC900 \uCABD\uC9C0"
+    bubbleType: 1
+    clip: {fileID: 0}
+    transform: {x: 0, y: 0}
 --- !u!1 &1633439390
 GameObject:
   m_ObjectHideFlags: 0

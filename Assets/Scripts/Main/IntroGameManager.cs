@@ -22,6 +22,7 @@ public class IntroGameManager : MonoBehaviour
     // #JES
     private GameObject dontDestroy;
     private int gameStage;
+    private int stageStep;
 
     /**
      * Dialogue1 : ���ΰ� ����
@@ -35,17 +36,18 @@ public class IntroGameManager : MonoBehaviour
     {
         dontDestroy = GameObject.Find("DontDestroy");
         gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
-        Debug.Log("Stage: " + gameStage);
+        stageStep = dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep;
+        // Debug.Log("Stage: " + gameStage);
 
-        if(gameStage == 1)
-            dialogueTrigger.dialogueTrigger(dialogue1);
-        else if(gameStage == 2)
-            dialogueTrigger.dialogueTrigger(dialogue3);
-        else if(gameStage == 3)
-            Dialogue3Start();   
+        // if(stageStep == 1)
+        //     dialogueTrigger.dialogueTrigger(dialogue1);
+        // else if(stageStep == 2)
+        //     dialogueTrigger.dialogueTrigger(dialogue2);
+        // else if(stageStep == 3)
+        //     Dialogue3Start();   
 
 
-        // dialogueTrigger.dialogueTrigger(dialogue1);// ��ȭ1 ����
+        dialogueTrigger.dialogueTrigger(dialogue1);// ��ȭ1 ����
     }
 
    

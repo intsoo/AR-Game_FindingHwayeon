@@ -16,6 +16,10 @@ public class MinigameManager : MonoBehaviour
     // #JES
     private GameObject dontDestroy;
     private int gameStage;
+    private int stageStep;
+
+    GameSceneManager gameSceneManager;
+
 
 
 
@@ -35,7 +39,13 @@ public class MinigameManager : MonoBehaviour
         // Stage Info
         dontDestroy = GameObject.Find("DontDestroy");
         gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
-        Debug.Log("Stage: " + gameStage);
+        stageStep = dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep;
+
+        // Debug.Log("Stage: " + gameStage);
+
+        // Game Scene Manager
+        gameSceneManager = FindObjectOfType<GameSceneManager>();
+
     }
 
 
@@ -51,14 +61,27 @@ public class MinigameManager : MonoBehaviour
     public void moveStage()
     {
 
-        dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage++;
-        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
-        Debug.Log("Stage: " + gameStage);
 
-        if(gameStage == 2)
-            SceneManager.LoadScene("Intro2");    
-        else if(gameStage == 3)
-            SceneManager.LoadScene("Yoora");    
+        if(gameStage == 1)
+        {
+            dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
+        }
+        else
+        {
+            dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep=1;
+            dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage++;
+
+        }
+        // Debug.Log("Stage: " + dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage
+        //  + "\n - Step: " + dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep);
+
+        // if(gameStage == 2)
+        //     SceneManager.LoadScene("Intro2");    
+        // else if(gameStage == 3)
+        //     SceneManager.LoadScene("Yoora"); 
+
+
+        gameSceneManager.convertScene();   
 
     }
 

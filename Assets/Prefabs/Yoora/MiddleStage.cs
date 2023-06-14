@@ -21,7 +21,9 @@ public class MiddleStage : MonoBehaviour
     private int stageStep;
     public GameSceneManager gameSceneManager;
 
-    
+
+    private bool panelOn = false;
+    private CanvasGroup SelectedPanel;
 
 
 
@@ -74,6 +76,11 @@ public class MiddleStage : MonoBehaviour
         // If image perception succeeded 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
+            if (panelOn)
+            {
+                panelOn = false;
+                StartCoroutine(FadeOut(SelectedPanel));
+            }
 
             if (ARTrackedMultiImageManager.imageRecognized)
             {
@@ -127,6 +134,8 @@ public class MiddleStage : MonoBehaviour
         // ������ �гο� FadeIn �ִϸ��̼� ����
         CanvasGroup selectedPanel = panels[panelIndex];
         StartCoroutine(FadeIn(selectedPanel, 0f));
+        panelOn = true;
+        SelectedPanel = selectedPanel;
     }
 
    /* private void OnEnable()
@@ -172,8 +181,6 @@ public class MiddleStage : MonoBehaviour
         // Keep it visible for the specified wait time
         yield return new WaitForSeconds(waitTime);
 
-        // Call the FadeOut coroutine
-        StartCoroutine(FadeOut(canvasGroup)); // ���̵� �ƿ� �ڷ�ƾ ����
     }
 
     private IEnumerator FadeOut(CanvasGroup canvasGroup)

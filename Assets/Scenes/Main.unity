@@ -3189,7 +3189,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 1
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 900, y: 1280}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3517,6 +3517,13 @@ MonoBehaviour:
   soundOnImage: {fileID: 1484398156}
   soundOffImage: {fileID: 1451145995}
   numOfVisitedPlace: {fileID: 1061318875}
+  dontDestroy: {fileID: 0}
+  gameStage: 0
+  stageStep: 0
+  check1: {fileID: 0}
+  check2: {fileID: 0}
+  check3: {fileID: 0}
+  check4: {fileID: 0}
 --- !u!1 &1750502823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4049,6 +4056,8 @@ MonoBehaviour:
   place: 3
   gameStage: 1
   stageStep: 1
+  visitedPlaces: 0000000000000000000000000000000000000000000000000000000000000000
+  saveData: 0
 --- !u!4 &2095851263
 Transform:
   m_ObjectHideFlags: 0

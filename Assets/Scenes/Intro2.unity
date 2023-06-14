@@ -655,6 +655,8 @@ MonoBehaviour:
   place: 3
   gameStage: 1
   stageStep: 2
+  visitedPlaces: 0000000000000000000000000000000000000000000000000000000000000000
+  saveData: 0
 --- !u!4 &233111086
 Transform:
   m_ObjectHideFlags: 0
@@ -1349,8 +1351,8 @@ RectTransform:
   m_GameObject: {fileID: 472487855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 907712451}
   m_RootOrder: 0
@@ -1594,7 +1596,7 @@ MonoBehaviour:
   m_text: "\uC5E5? 86\uD559\uBC88 \uD654\uC5EC\uB2C8?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1327510084722843351, guid: c9931cb29e9c14644a98c5b5413e6eb6, type: 2}
+  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2611,7 +2613,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: -2.83
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1000, y: 2560}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3663,8 +3665,8 @@ RectTransform:
   m_GameObject: {fileID: 1369733761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.00024414065}
-  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 907712451}
   m_RootOrder: 2
@@ -5372,7 +5374,7 @@ MonoBehaviour:
     \uD604\uD310\uC744 \uCC0D\uC73C\uC138\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1327510084722843351, guid: c9931cb29e9c14644a98c5b5413e6eb6, type: 2}
+  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6103,7 +6105,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283533170
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

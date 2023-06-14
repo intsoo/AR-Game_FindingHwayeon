@@ -32,6 +32,20 @@ public class MiddleStage : MonoBehaviour
         // Game Scene Manager
         gameSceneManager = FindObjectOfType<GameSceneManager>();
 
+
+        // if (gameStage == 2 && !isStage2Activated)
+        if (gameStage == 2)
+        {
+            ActivateRandomPanel(panels.Length);
+            isStage2Activated = true;
+        }
+        // else if (gameStage == 3 && isStage2Activated)
+        else if (gameStage == 3)
+        {
+            ActivateRandomPanel(panels.Length - 1, gameStage);
+            isStage2Activated = false;
+        }
+
     }
 
 
@@ -70,16 +84,6 @@ public class MiddleStage : MonoBehaviour
         #endif
 
 
-        if (gameStage == 2 && !isStage2Activated)
-        {
-            ActivateRandomPanel(panels.Length);
-            isStage2Activated = true;
-        }
-        else if (gameStage == 3 && isStage2Activated)
-        {
-            ActivateRandomPanel(panels.Length - 1, gameStage);
-            isStage2Activated = false;
-        }
     }
 
     private void checkData()

@@ -72,8 +72,8 @@ public class GameSceneManager : MonoBehaviour
                     break;
                 // 2.2. Minigame 2
                 case 2:
-                    // StartMinigame(1);  // 거미 슈팅
-                    StartMinigame(gameStage);  // 거미 슈팅
+                    StartMinigame(1);  // 거미 슈팅
+                    // StartMinigame(gameStage);  // 거미 슈팅
                     break;
             }
         }

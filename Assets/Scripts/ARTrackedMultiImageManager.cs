@@ -43,7 +43,6 @@ public class ARTrackedMultiImageManager : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             UpdateImage(trackedImage);
-            imageRecognized= true;
         }
 
         foreach (var trackedImage in eventArgs.updated)
@@ -59,6 +58,7 @@ public class ARTrackedMultiImageManager : MonoBehaviour
     }
     private void UpdateImage(ARTrackedImage trackedImage)
     {
+            imageRecognized = true;
         string name = trackedImage.referenceImage.name; // 추적 중인 이미지의 이름을 가져옴
         GameObject trackedObject = spawnedObjects[name]; // 추적 중인 이미지와 연결된 게임 오브젝트를 가져옴
 

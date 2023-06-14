@@ -13,11 +13,11 @@ public class Explode : MonoBehaviour
     public float waitTime = 3.0f;
     bool bulletCollission = false; // to avoid hittimg multiple dpiders with same bullet
 
-    //Scoring
-    TextMeshProUGUI scoreText;
-    GameObject scoreBoardUI;
-    TextMeshProUGUI gameSuccessText;
-    public static int score;
+    ////Scoring
+    //TextMeshProUGUI scoreText;
+    //GameObject scoreBoardUI;
+    //TextMeshProUGUI gameSuccessText;
+    //public static int score;
 
     //Audio
     AudioSource audioSoure;
@@ -61,7 +61,8 @@ public class Explode : MonoBehaviour
         if (collision.transform.tag == "Spider" && bulletCollission == false)
         {
             Destroy(collision.transform.gameObject); // destroy spider
-            score += 5;
+            //Scoring.score += 5;
+            Shoot.currentScore += 5;
             audioSoure.Play(); //거미 죽었을때 소리 재생
 
             bulletCollission = true;

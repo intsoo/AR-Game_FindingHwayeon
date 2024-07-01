@@ -1,7 +1,7 @@
 # Finding Hwayeon | AR Treasure Hunt Game
 ## | 2023-1 Virtual Reality Class Team Project
 * Check out the implementation details in my blog post: <a href="https://jsoo615.tistory.com/10"> Unity AR Foundation (Throwing Objects)</a>.
-* Check out the Demo video in my GDrive: <a href="https://drive.google.com/file/d/106X-XortKUhXF7AxWW37XOXKdTGfwl8Y/view?usp=sharing"> Demo </a>
+* Check out the demo video in my GDrive: <a href="https://drive.google.com/file/d/106X-XortKUhXF7AxWW37XOXKdTGfwl8Y/view?usp=sharing"> Demo </a>
 
 ----
 
